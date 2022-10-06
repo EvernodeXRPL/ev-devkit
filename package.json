@@ -1,6 +1,6 @@
 {
   "name": "evdevkit",
-  "version": "1.0.0",
+  "version": "0.5.0",
   "description": "Developer toolkit for Evernode smart contract deployment",
   "main": "index.js",
   "keywords": [
@@ -19,6 +19,6 @@
     "uuid": "^9.0.0"
   },
   "bin": {
-    "hpdevkit": "./index.js"
+    "evdevkit": "./index.js"
   }
 }

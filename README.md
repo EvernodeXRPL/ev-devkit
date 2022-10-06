@@ -9,7 +9,7 @@ HotPocket developer kit requires you to install [NodeJs](https://nodejs.org/en/)
 ### Supports cross platform
 This is a npm global package which supports both Linux and Windows
 1. Install [prerequisites](#prerequisites).
-2. Run the following command to install hpdevkit on your machine.
+2. Run the following command to install evdevkit on your machine.
     ```
     npm i -g evdevkit
     ```
@@ -25,7 +25,7 @@ Run one of following commands to update evdevkit.
 ## Uninstall
 Uninstall `evdevkit` and the supporting docker images and containers.
 
-- Using hpdevkit CLI
+- Using evdevkit CLI
     ```
     npm uninstall -g evdevkit
     ```
