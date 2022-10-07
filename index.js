@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const { program, Argument } = require('commander');
+const { program } = require('commander');
 const { version, list, acquire, host, bundle, keygen, deploy, acquireAndDeploy } = require('./lib/command-handler');
 
 program
@@ -28,10 +28,7 @@ program
 program
     .command('acquire')
     .description('Acquire instance in Evernode')
-    .argument('<tenant-address>', 'Tenant XRPL account address')
-    .argument('<tenant-secret>', 'Tenant XRPL account secret')
     .option('-h, --host [host]', 'Host to acquire')
-    .option('-u, --user [user]', 'Public key of the user')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
     .option('-i, --image [image]', 'Instance image')
@@ -52,19 +49,15 @@ program
     .argument('<contract-bundle-path>', 'Absolute path to the contract bundle')
     .argument('<instance-ip>', 'IP address of the Evernode instance')
     .argument('<user-port>', 'User port of the instance')
-    .argument('<user-private-key>', 'Private key of the user')
     .action(deploy);
 
 program
     .command('acquire-and-deploy')
     .description('Acquire instance and deploy contract to a Evernode instance')
-    .argument('<tenant-address>', 'Tenant XRPL account address')
-    .argument('<tenant-secret>', 'Tenant XRPL account secret')
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<contract-bin>', 'Contract binary name')
     .argument('<contract-bin-args>', 'Contract binary arguments')
     .option('-h, --host [host]', 'Host to acquire')
-    .option('-u, --user [user]', 'Private key of the user')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
     .option('-i, --image [image]', 'Instance image')
