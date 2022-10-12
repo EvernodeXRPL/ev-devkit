@@ -51,6 +51,9 @@ program
 program
     .command('bundle')
     .description('Create contract bundle from contract')
+    .addHelpText('afterAll', `\n${ENV_TEXT}`)
+    .addHelpText('afterAll', `  ${OPTIONAL_TEXT}
+    ${CONTRACT_CONFIG_PATH_TEXT}`)
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<instance-public-key>', 'Public key of the Evernode instance')
     .argument('<contract-bin>', 'Contract binary name')
@@ -61,8 +64,8 @@ program
     .command('deploy')
     .description('Deploy contract to a Evernode instance')
     .addHelpText('afterAll', `\n${ENV_TEXT}`)
-    .addHelpText('afterAll', `  ${OPTIONAL_TEXT}
-    ${CONTRACT_CONFIG_PATH_TEXT}`)
+    .addHelpText('afterAll', `  ${REQUIRED_TEXT}
+    ${USER_PRIVATE_KEY_TEXT}`)
     .argument('<contract-bundle-path>', 'Absolute path to the contract bundle')
     .argument('<instance-ip>', 'IP address of the Evernode instance')
     .argument('<user-port>', 'User port of the instance')
