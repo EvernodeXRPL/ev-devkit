@@ -1,7 +1,15 @@
 #! /usr/bin/env node
 
-const { program, Argument } = require('commander');
+const { program } = require('commander');
 const { version, list, acquire, host, bundle, keygen, deploy, acquireAndDeploy } = require('./lib/command-handler');
+
+const ENV_TEXT = 'Environment Variables:';
+const REQUIRED_TEXT = 'Required:';
+const OPTIONAL_TEXT = 'Optional:';
+const TENANT_SECRET_TEXT = 'EV_TENANT_SECRET               Tenant XRPL account secret';
+const USER_PRIVATE_KEY_TEXT = 'EV_USER_PRIVATE_KEY            Private key of the contract client (Can be generated using \"evdevkit keygen\")';
+const HP_CONFIG_PATH_TEXT = 'EV_HP_CONFIG_PATH              Path of the locally created HotPocket configuration file including instance configuration';
+const CONTRACT_CONFIG_PATH_TEXT = 'EV_CONTRACT_CONFIG_PATH        Path of the locally created HotPocket contract configuration file including contract configuration';
 
 program
     .command('version')
@@ -28,10 +36,13 @@ program
 program
     .command('acquire')
     .description('Acquire instance in Evernode')
-    .argument('<tenant-address>', 'Tenant XRPL account address')
-    .argument('<tenant-secret>', 'Tenant XRPL account secret')
+    .addHelpText('afterAll', `\n${ENV_TEXT}`)
+    .addHelpText('afterAll', `  ${REQUIRED_TEXT}
+    ${TENANT_SECRET_TEXT}
+    ${USER_PRIVATE_KEY_TEXT}`)
+    .addHelpText('afterAll', `  ${OPTIONAL_TEXT}
+    ${HP_CONFIG_PATH_TEXT}`)
     .option('-h, --host [host]', 'Host to acquire')
-    .option('-u, --user [user]', 'Public key of the user')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
     .option('-i, --image [image]', 'Instance image')
@@ -40,6 +51,9 @@ program
 program
     .command('bundle')
     .description('Create contract bundle from contract')
+    .addHelpText('afterAll', `\n${ENV_TEXT}`)
+    .addHelpText('afterAll', `  ${OPTIONAL_TEXT}
+    ${CONTRACT_CONFIG_PATH_TEXT}`)
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<instance-public-key>', 'Public key of the Evernode instance')
     .argument('<contract-bin>', 'Contract binary name')
@@ -49,22 +63,28 @@ program
 program
     .command('deploy')
     .description('Deploy contract to a Evernode instance')
+    .addHelpText('afterAll', `\n${ENV_TEXT}`)
+    .addHelpText('afterAll', `  ${REQUIRED_TEXT}
+    ${USER_PRIVATE_KEY_TEXT}`)
     .argument('<contract-bundle-path>', 'Absolute path to the contract bundle')
     .argument('<instance-ip>', 'IP address of the Evernode instance')
     .argument('<user-port>', 'User port of the instance')
-    .argument('<user-private-key>', 'Private key of the user')
     .action(deploy);
 
 program
     .command('acquire-and-deploy')
     .description('Acquire instance and deploy contract to a Evernode instance')
-    .argument('<tenant-address>', 'Tenant XRPL account address')
-    .argument('<tenant-secret>', 'Tenant XRPL account secret')
+    .addHelpText('afterAll', `\n${ENV_TEXT}`)
+    .addHelpText('afterAll', `  ${REQUIRED_TEXT}
+    ${TENANT_SECRET_TEXT}
+    ${USER_PRIVATE_KEY_TEXT}`)
+    .addHelpText('afterAll', `  ${OPTIONAL_TEXT}
+    ${HP_CONFIG_PATH_TEXT}
+    ${CONTRACT_CONFIG_PATH_TEXT}`)
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<contract-bin>', 'Contract binary name')
     .argument('<contract-bin-args>', 'Contract binary arguments')
     .option('-h, --host [host]', 'Host to acquire')
-    .option('-u, --user [user]', 'Private key of the user')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
     .option('-i, --image [image]', 'Instance image')
