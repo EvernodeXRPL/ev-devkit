@@ -57,7 +57,7 @@ program
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<instance-public-key>', 'Public key of the Evernode instance')
     .argument('<contract-bin>', 'Contract binary name')
-    .argument('<contract-bin-args>', 'Contract binary arguments')
+    .option('-a, --contract-args [contract-args]', 'Contract binary arguments')
     .action(bundle);
 
 program
@@ -83,7 +83,7 @@ program
     ${CONTRACT_CONFIG_PATH_TEXT}`)
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<contract-bin>', 'Contract binary name')
-    .argument('<contract-bin-args>', 'Contract binary arguments')
+    .option('-a, --contract-args [contract-args]', 'Contract binary arguments')
     .option('-h, --host [host]', 'Host to acquire')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
@@ -103,7 +103,7 @@ program
     .argument('<size>', 'Size of the cluster')
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<contract-bin>', 'Contract binary name')
-    .argument('<contract-bin-args>', 'Contract binary arguments')
+    .option('-a, --contract-args [contract-args]', 'Contract binary arguments')
     .option('-h, --host [host]', 'Host to acquire')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
