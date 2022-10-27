@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const { program } = require('commander');
-const { version, list, acquire, host, bundle, keygen, deploy, acquireAndDeploy } = require('./lib/command-handler');
+const { version, list, acquire, host, bundle, keygen, deploy, acquireAndDeploy, clusterCreate } = require('./lib/command-handler');
 
 const ENV_TEXT = 'Environment Variables:';
 const REQUIRED_TEXT = 'Required:';
@@ -57,7 +57,7 @@ program
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<instance-public-key>', 'Public key of the Evernode instance')
     .argument('<contract-bin>', 'Contract binary name')
-    .argument('<contract-bin-args>', 'Contract binary arguments')
+    .option('-a, --contract-args [contract-args]', 'Contract binary arguments')
     .action(bundle);
 
 program
@@ -83,12 +83,32 @@ program
     ${CONTRACT_CONFIG_PATH_TEXT}`)
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<contract-bin>', 'Contract binary name')
-    .argument('<contract-bin-args>', 'Contract binary arguments')
+    .option('-a, --contract-args [contract-args]', 'Contract binary arguments')
     .option('-h, --host [host]', 'Host to acquire')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
     .option('-i, --image [image]', 'Instance image')
     .action(acquireAndDeploy);
+
+program
+    .command('cluster-create')
+    .description('Acquire instance cluster and deploy contract')
+    .addHelpText('afterAll', `\n${ENV_TEXT}`)
+    .addHelpText('afterAll', `  ${REQUIRED_TEXT}
+    ${TENANT_SECRET_TEXT}
+    ${USER_PRIVATE_KEY_TEXT}`)
+    .addHelpText('afterAll', `  ${OPTIONAL_TEXT}
+    ${HP_CONFIG_PATH_TEXT}
+    ${CONTRACT_CONFIG_PATH_TEXT}`)
+    .argument('<size>', 'Size of the cluster')
+    .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
+    .argument('<contract-bin>', 'Contract binary name')
+    .option('-a, --contract-args [contract-args]', 'Contract binary arguments')
+    .option('-h, --host [host]', 'Host to acquire')
+    .option('-m, --moments [moments]', 'Life moments')
+    .option('-c, --contract-id [contract-id]', 'Contract id')
+    .option('-i, --image [image]', 'Instance image')
+    .action(clusterCreate);
 
 try {
     program.parse();
