@@ -8,7 +8,7 @@ const REQUIRED_TEXT = 'Required:';
 const OPTIONAL_TEXT = 'Optional:';
 const TENANT_SECRET_TEXT = 'EV_TENANT_SECRET               Tenant XRPL account secret';
 const USER_PRIVATE_KEY_TEXT = 'EV_USER_PRIVATE_KEY            Private key of the contract client (Can be generated using \"evdevkit keygen\")';
-const INSTANCE_CONFIG_PATH_TEXT = 'EV_INSTANCE_CONFIG_PATH              Path of the locally created HotPocket instance configuration file';
+const INSTANCE_CONFIG_PATH_TEXT = 'EV_INSTANCE_CONFIG_PATH        Path of the locally created HotPocket instance configuration file';
 const CONTRACT_CONFIG_PATH_TEXT = 'EV_CONTRACT_CONFIG_PATH        Path of the locally created HotPocket contract configuration file';
 
 program
