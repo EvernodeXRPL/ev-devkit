@@ -1,4 +1,0 @@
-// Please input the preferred host list in here.
-// example: 
-// ryP9kGFLWXsEXyznp5YS91HFu8KJyQLGL
-// rhM7N9GEL8pfwz2wy8epLjz85T6rLyiuCC

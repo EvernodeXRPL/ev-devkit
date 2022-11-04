@@ -108,7 +108,7 @@ program
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
     .option('-i, --image [image]', 'Instance image')
-    .option('-f, --file-path [file-path]', 'File path of preferred hosts')
+    .option('-f, --file-path [file-path]', 'File path of preferred host account list (in line-by-line format)')
     .action(clusterCreate);
 
 try {
