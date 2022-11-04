@@ -15,7 +15,7 @@ This is a npm global package which supports both Linux and Windows
     ```
 
 ## Updates
-Update `evdevkit` to the latest and update the supporting docker images.
+Update `evdevkit` to the latest version.
 
 Run one of following commands to update evdevkit.
     ```
@@ -23,7 +23,7 @@ Run one of following commands to update evdevkit.
     ```
 
 ## Uninstall
-Uninstall `evdevkit` and the supporting docker images and containers.
+Uninstall `evdevkit`.
 
 - Using evdevkit CLI
     ```
