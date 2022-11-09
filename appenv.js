@@ -16,10 +16,10 @@ const appenv = {
         return process.env.EV_USER_PRIVATE_KEY;
     },
     get hpConfigPath() {
-        if (process.env.EV_HP_CONFIG_PATH && !fs.existsSync(process.env.EV_HP_CONFIG_PATH))
-            throw `HotPocket config file does not exist in EV_HP_CONFIG_PATH=${process.env.EV_HP_CONFIG_PATH}`;
+        if (process.env.EV_INSTANCE_CONFIG_PATH && !fs.existsSync(process.env.EV_INSTANCE_CONFIG_PATH))
+            throw `HotPocket config file does not exist in EV_INSTANCE_CONFIG_PATH=${process.env.EV_INSTANCE_CONFIG_PATH}`;
 
-        return process.env.EV_HP_CONFIG_PATH;
+        return process.env.EV_INSTANCE_CONFIG_PATH;
     },
     get contractConfigPath() {
         if (process.env.EV_CONTRACT_CONFIG_PATH && !fs.existsSync(process.env.EV_CONTRACT_CONFIG_PATH))
