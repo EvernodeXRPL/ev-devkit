@@ -14,7 +14,7 @@
   "dependencies": {
     "archiver": "^5.3.1",
     "commander": "9.4.0",
-    "evernode-js-client": "0.5.2",
+    "evernode-js-client": "0.5.3",
     "hotpocket-js-client": "^0.5.4",
     "uuid": "^9.0.0"
   },
