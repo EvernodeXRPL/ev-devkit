@@ -1,6 +1,6 @@
 {
   "name": "evdevkit",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Developer toolkit for Evernode smart contract deployment",
   "main": "index.js",
   "keywords": [
