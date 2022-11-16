@@ -11,7 +11,7 @@ This is a npm global package which supports both Linux and Windows
 1. Install [prerequisites](#prerequisites).
 2. Run the following command to install evdevkit on your machine.
     ```
-    npm i -g evdevkit
+    npm i evdevkit -g
     ```
 
 ## Updates
@@ -19,7 +19,7 @@ Update `evdevkit` to the latest version.
 
 Run one of following commands to update evdevkit.
     ```
-    npm update -g evdevkit
+    npm update evdevkit -g
     ```
 
 ## Uninstall
@@ -27,7 +27,7 @@ Uninstall `evdevkit`.
 
 - Using evdevkit CLI
     ```
-    npm uninstall -g evdevkit
+    npm uninstall evdevkit -g
     ```
 
 _**NOTE:** In Linux platforms, for Installation, Update and Uninstallation you'll need root privileges. Add `sudo` to above commands._
