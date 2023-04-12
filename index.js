@@ -104,7 +104,6 @@ program
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<contract-bin>', 'Contract binary name')
     .option('-a, --contract-args [contract-args]', 'Contract binary arguments')
-//    .option('-h, --host [host]', 'Host to acquire')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
     .option('-i, --image [image]', 'Instance image')

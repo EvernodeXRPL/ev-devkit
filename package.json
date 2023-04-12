@@ -1,6 +1,6 @@
 {
   "name": "evdevkit",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "description": "Developer toolkit for Evernode smart contract deployment",
   "main": "index.js",
   "keywords": [
@@ -12,11 +12,11 @@
   "homepage": "https://github.com/HotPocketDev/evernode-sdk",
   "license": "MIT",
   "dependencies": {
-    "archiver": "^5.3.1",
+    "archiver": "5.3.1",
     "commander": "9.4.0",
-    "evernode-js-client": "0.5.3",
-    "hotpocket-js-client": "^0.5.4",
-    "uuid": "^9.0.0"
+    "evernode-js-client": "0.6.1",
+    "hotpocket-js-client": "0.5.4",
+    "uuid": "9.0.0"
   },
   "bin": {
     "evdevkit": "./index.js"
