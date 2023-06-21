@@ -1,0 +1,3 @@
+[submodule "evernode-bootstrap-contract"]
+	path = evernode-bootstrap-contract
+	url = https://github.com/EvernodeXRPL/evernode-bootstrap-contract.git
