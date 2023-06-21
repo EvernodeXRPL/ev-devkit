@@ -115,7 +115,7 @@ program
     .description('Extend instance')
     .argument('<host-address>', 'Host Address')
     .argument('<instance-name>', 'Instance Name')
-    .option('-m, --moments [moments]', 'Life moments')
+    .option('-m, --moments [moments]', 'Instance life in moments')
     .action(extendInstance);
 
 try {
