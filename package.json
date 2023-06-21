@@ -1,6 +1,6 @@
 {
   "name": "evdevkit",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "description": "Developer toolkit for Evernode smart contract deployment",
   "keywords": [
     "Evernode",
@@ -13,7 +13,7 @@
   "dependencies": {
     "archiver": "5.3.1",
     "commander": "9.4.0",
-    "evernode-js-client": "0.6.8",
+    "evernode-js-client": "0.6.11",
     "hotpocket-js-client": "0.5.5",
     "uuid": "9.0.0"
   },
