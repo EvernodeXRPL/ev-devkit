@@ -22,11 +22,11 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint *.js",
-    "build": "npm run lint && ncc build index.js -o dist/",
+    "build": "npm install && npm run lint && ncc build index.js -o dist/ && cp -r ./assets ./dist/assets",
     "build:bootstrap": "cmake -S ./evernode-bootstrap-contract/ -B ./evernode-bootstrap-contract/ && make --directory=./evernode-bootstrap-contract",
-    "bundle": "npm run build && npm run prepare && cp -r ./lib/assets ./dist/assets && ./clean-pkg.sh",
+    "bundle": "npm run build && ./clean-pkg.sh",
     "publish": "npm run bundle && cp README.md dist && cp && npm publish ./dist",
-    "prepare": "npm run build:bootstrap && cp ./evernode-bootstrap-contract/build/bootstrap_contract ./lib/assets/bootstrap_contract && cp ./evernode-bootstrap-contract/src/bootstrap_upgrade.sh ./lib/assets/bootstrap_upgrade.sh"
+    "prepare": "npm run build:bootstrap && mkdir -p ./assets && cp ./evernode-bootstrap-contract/build/bootstrap_contract ./assets/bootstrap_contract && cp ./evernode-bootstrap-contract/src/bootstrap_upgrade.sh ./assets/bootstrap_upgrade.sh"
   },
   "bin": {
     "evdevkit": "./index.js"

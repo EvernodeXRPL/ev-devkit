@@ -108,7 +108,8 @@ program
     .option('-c, --contract-id [contract-id]', 'Contract id')
     .option('-i, --image [image]', 'Instance image')
     .option('-f, --file-path [file-path]', 'File path of preferred host account list (in line-by-line format)')
-    .option('-s, --multisig', 'Requirement of making a cluster with multiple signer nodes.')
+    .option('--multisig', 'Requirement of making a cluster with multiple signer nodes.')
+    .option('-s, --signers [signers]', 'JSON file path of signer details')
     .option('-q, --quorum [quorum]', 'Quorum of the cluster with multiple signer nodes.')
     .action(clusterCreate);
 
