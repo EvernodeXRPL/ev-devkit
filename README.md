@@ -5,8 +5,8 @@ Evernode uses HotPocket as its smart contract engine. HotPocket smart contracts 
 
 ## Prepare Develop Environment
 ```
-npm install
-npm run prepare
+1. Run `git submodule update --init --recursive` to clone the bootstrap contract for first time.
+2. Execute `npm install` command.
 
 ```
 
