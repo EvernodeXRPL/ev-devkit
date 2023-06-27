@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const { program } = require('commander');
-const { version, list, acquire, host, bundle, keygen, deploy, acquireAndDeploy, clusterCreate } = require('./lib/command-handler');
+const { version, list, acquire, host, bundle, keygen, deploy, acquireAndDeploy, clusterCreate, extendInstance } = require('./lib/command-handler');
 
 const ENV_TEXT = 'Environment Variables:';
 const REQUIRED_TEXT = 'Required:';
@@ -112,6 +112,14 @@ program
     .option('-s, --signers [signers]', 'JSON file path of signer details')
     .option('-q, --quorum [quorum]', 'Quorum of the cluster with multiple signer nodes.')
     .action(clusterCreate);
+
+program
+    .command('extend-instance')
+    .description('Extend instance')
+    .argument('<host-address>', 'Host Address')
+    .argument('<instance-name>', 'Instance Name')
+    .option('-m, --moments [moments]', 'Instance Life In Moments')
+    .action(extendInstance);
 
 try {
     program.parse();
