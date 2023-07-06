@@ -102,7 +102,3 @@ dist
 
 # TernJS port file
 .tern-port
-
-# Evernode Bootstrap contract files.
-assets/bootstrap_contract
-assets/bootstrap_upgrade.sh
