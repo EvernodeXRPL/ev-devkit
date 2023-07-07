@@ -4,7 +4,7 @@ Evernode uses HotPocket as its smart contract engine. HotPocket smart contracts 
 ## Installation
 
 ### Prerequisites
-HotPocket developer kit requires you to install [NodeJs](https://nodejs.org/en/) on your development machine.
+Evernode developer kit requires you to install [NodeJs](https://nodejs.org/en/) on your development machine.
 
 ### Supports cross platform
 This is a npm global package which supports both Linux and Windows
