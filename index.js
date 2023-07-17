@@ -110,7 +110,8 @@ program
     .option('-h, --hosts-file-path [hosts-file-path]', 'File path of preferred host account list (in line-by-line format)')
     .option('--multisig', 'Requirement of making a cluster with multiple signer nodes')
     .option('-s, --signers [signers]', 'JSON file path of signer details')
-    .option('-c, --signer-count [signer-count]', 'Signer count for multi signing')
+    .option('-n, --signer-count [signer-count]', 'Signer count for multi signing')
+    .option('-l, --signer-moments [signer-life]', 'Life moments for the signers')
     .option('-q, --quorum [quorum]', 'Quorum of the cluster with multiple signer nodes (within the valid range (0,1])')
     .action(clusterCreate);
 
