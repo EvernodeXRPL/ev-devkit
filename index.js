@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const { program } = require('commander');
-const { version, list, acquire, host, bundle, keygen, deploy, acquireAndDeploy, clusterCreate, extendInstance } = require('./lib/command-handler');
+const { version, list, acquire, host, bundle, keygen, deploy, acquireAndDeploy, clusterCreate, extendInstance, audit } = require('./lib/command-handler');
 
 const ENV_TEXT = 'Environment Variables:';
 const REQUIRED_TEXT = 'Required:';
@@ -120,6 +120,12 @@ program
     .argument('<instance-name>', 'Instance Name')
     .option('-m, --moments [moments]', 'Instance Life In Moments')
     .action(extendInstance);
+
+program
+    .command('audit')
+    .description('Audit')
+    .argument('<host-address>', 'Host Address')
+    .action(audit);
 
 try {
     program.parse();
