@@ -125,6 +125,9 @@ program
     .command('audit')
     .description('Audit')
     .argument('<host-address>', 'Host Address')
+    .option('-m, --moments [moments]', 'Instance Life In Moments')
+    .option('-c, --contract-id [contract-id]', 'Contract id')
+    .option('-i, --image [image]', 'Instance image')
     .action(audit);
 
 try {
