@@ -124,7 +124,8 @@ program
 program
     .command('audit')
     .description('Audit')
-    .argument('<host-address>', 'Host Address')
+    .option('-f, --file-path [file-path]', 'File path of JSON file containing host addresses for auditing')
+    .option('-h, --host-address [host-address]', 'Host address to be audited (for single host auditing)')
     .option('-m, --moments [moments]', 'Instance Life In Moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
     .option('-i, --image [image]', 'Instance image')
