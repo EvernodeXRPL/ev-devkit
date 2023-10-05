@@ -125,11 +125,8 @@ program
 program
     .command('audit')
     .description('Audit')
-    .option('-f, --file-path [file-path]', 'File path of JSON file containing host addresses for auditing')
+    .option('-f, --file-path [file-path]', 'File path of host account list (in line-by-line format)')
     .option('-h, --host-address [host-address]', 'Host address to be audited (for single host auditing)')
-    .option('-m, --moments [moments]', 'Instance Life In Moments')
-    .option('-c, --contract-id [contract-id]', 'Contract id')
-    .option('-i, --image [image]', 'Instance image')
     .action(audit);
 
 try {
