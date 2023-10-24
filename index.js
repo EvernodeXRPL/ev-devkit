@@ -131,6 +131,7 @@ program
     .description('Audit')
     .option('-f, --file-path [file-path]', 'File path of host account list (in line-by-line format)')
     .option('-h, --host-address [host-address]', 'Host address to be audited (for single host auditing)')
+    .option('-t, --op-time [op-time]', 'Operational time threshold for the audit in hours)')
     .action(audit);
 
 try {
