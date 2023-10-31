@@ -104,7 +104,6 @@ program
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<contract-bin>', 'Contract binary name')
     .argument('<hosts-file-path>', 'File path of preferred host account list (in line-by-line format)')
-    .argument('<evr-limit>', 'Maximum amount of EVRs to be spent on instance acquisitions')
     .option('-a, --contract-args [contract-args]', 'Contract binary arguments')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
@@ -117,6 +116,7 @@ program
     .option('--signers [signers]', 'JSON file path of signer details')
     .option('--signer-life [signer-life]', 'Life moments for the signers')
     .option('--signer-quorum [signer-quorum]', 'Quorum of the cluster with multiple signer nodes (within the valid range (0,1])')
+    .option('-e, --evr-limit [evr-limit]', 'Maximum amount of EVRs to be spent on instance acquisitions')
     .action(clusterCreate);
 
 program
