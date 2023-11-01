@@ -42,7 +42,7 @@ program
     ${USER_PRIVATE_KEY_TEXT}`)
     .addHelpText('afterAll', `  ${OPTIONAL_TEXT}
     ${INSTANCE_CONFIG_PATH_TEXT}`)
-    .option('-h, --host [host]', 'Host to acquire')
+    .argument('<host>', 'Host to acquire')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
     .option('-i, --image [image]', 'Instance image')
@@ -83,8 +83,8 @@ program
     ${CONTRACT_CONFIG_PATH_TEXT}`)
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<contract-bin>', 'Contract binary name')
+    .argument('<host>', 'Host to acquire')
     .option('-a, --contract-args [contract-args]', 'Contract binary arguments')
-    .option('-h, --host [host]', 'Host to acquire')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
     .option('-i, --image [image]', 'Instance image')
@@ -103,11 +103,11 @@ program
     .argument('<size>', 'Size of the cluster')
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<contract-bin>', 'Contract binary name')
+    .argument('<hosts-file-path>', 'File path of preferred host account list (in line-by-line format)')
     .option('-a, --contract-args [contract-args]', 'Contract binary arguments')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
     .option('-i, --image [image]', 'Instance image')
-    .option('-h, --hosts-file-path [hosts-file-path]', 'File path of preferred host account list (in line-by-line format)')
     .option('-l, --life-plan [life-plan]', 'Organize cluster node lifespans using stat (static - default), rand (random), or inc (incremental) modes.')
     .option('--min-life [min-life]', 'Minimum moment count to consider in randomized node life planning.')
     .option('--max-life [max-life]', 'Maximum moment count to consider in randomized node life planning.')
@@ -116,6 +116,7 @@ program
     .option('--signers [signers]', 'JSON file path of signer details')
     .option('--signer-life [signer-life]', 'Life moments for the signers')
     .option('--signer-quorum [signer-quorum]', 'Quorum of the cluster with multiple signer nodes (within the valid range (0,1])')
+    .option('-e, --evr-limit [evr-limit]', 'Maximum amount of EVRs to be spent on instance acquisitions')
     .action(clusterCreate);
 
 program
