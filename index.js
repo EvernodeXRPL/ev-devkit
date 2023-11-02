@@ -8,8 +8,8 @@ const REQUIRED_TEXT = 'Required:';
 const OPTIONAL_TEXT = 'Optional:';
 const TENANT_SECRET_TEXT = 'EV_TENANT_SECRET               Tenant XRPL account secret';
 const USER_PRIVATE_KEY_TEXT = 'EV_USER_PRIVATE_KEY            Private key of the contract client (Can be generated using "evdevkit keygen")';
-const INSTANCE_CONFIG_PATH_TEXT = 'EV_INSTANCE_CONFIG_PATH        Path of the locally created HotPocket instance configuration file';
-const CONTRACT_CONFIG_PATH_TEXT = 'EV_CONTRACT_CONFIG_PATH        Path of the locally created HotPocket contract configuration file';
+const HP_INIT_CFG_PATH_TEXT = 'EV_HP_INIT_CFG_PATH            File path of the HotPocket configuration for the instance creation';
+const HP_OVERRIDE_CFG_PATH_TEXT = 'EV_HP_OVERRIDE_CFG_PATH        File path of the HotPocket configuration for the contract bundle upload';
 
 program
     .command('version')
@@ -41,7 +41,7 @@ program
     ${TENANT_SECRET_TEXT}
     ${USER_PRIVATE_KEY_TEXT}`)
     .addHelpText('afterAll', `  ${OPTIONAL_TEXT}
-    ${INSTANCE_CONFIG_PATH_TEXT}`)
+    ${HP_INIT_CFG_PATH_TEXT}`)
     .argument('<host>', 'Host to acquire')
     .option('-m, --moments [moments]', 'Life moments')
     .option('-c, --contract-id [contract-id]', 'Contract id')
@@ -53,7 +53,7 @@ program
     .description('Create contract bundle from contract')
     .addHelpText('afterAll', `\n${ENV_TEXT}`)
     .addHelpText('afterAll', `  ${OPTIONAL_TEXT}
-    ${CONTRACT_CONFIG_PATH_TEXT}`)
+    ${HP_OVERRIDE_CFG_PATH_TEXT}`)
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<instance-public-key>', 'Public key of the Evernode instance')
     .argument('<contract-bin>', 'Contract binary name')
@@ -79,8 +79,8 @@ program
     ${TENANT_SECRET_TEXT}
     ${USER_PRIVATE_KEY_TEXT}`)
     .addHelpText('afterAll', `  ${OPTIONAL_TEXT}
-    ${INSTANCE_CONFIG_PATH_TEXT}
-    ${CONTRACT_CONFIG_PATH_TEXT}`)
+    ${HP_INIT_CFG_PATH_TEXT}
+    ${HP_OVERRIDE_CFG_PATH_TEXT}`)
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<contract-bin>', 'Contract binary name')
     .argument('<host>', 'Host to acquire')
@@ -98,8 +98,8 @@ program
     ${TENANT_SECRET_TEXT}
     ${USER_PRIVATE_KEY_TEXT}`)
     .addHelpText('afterAll', `  ${OPTIONAL_TEXT}
-    ${INSTANCE_CONFIG_PATH_TEXT}
-    ${CONTRACT_CONFIG_PATH_TEXT}`)
+    ${HP_INIT_CFG_PATH_TEXT}
+    ${HP_OVERRIDE_CFG_PATH_TEXT}`)
     .argument('<size>', 'Size of the cluster')
     .argument('<contract-path>', 'Absolute path to the contract directory to be bundled')
     .argument('<contract-bin>', 'Contract binary name')

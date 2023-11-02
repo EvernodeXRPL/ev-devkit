@@ -16,17 +16,17 @@ const appenv = {
 
         return process.env.EV_USER_PRIVATE_KEY;
     },
-    get hpConfigPath() {
-        if (process.env.EV_INSTANCE_CONFIG_PATH && !fs.existsSync(process.env.EV_INSTANCE_CONFIG_PATH))
-            throw `HotPocket config file does not exist in EV_INSTANCE_CONFIG_PATH=${process.env.EV_INSTANCE_CONFIG_PATH}`;
+    get hpInitCfgPath() {
+        if (process.env.EV_HP_INIT_CFG_PATH && !fs.existsSync(process.env.EV_HP_INIT_CFG_PATH))
+            throw `HotPocket config file does not exist in EV_HP_INIT_CFG_PATH=${process.env.EV_HP_INIT_CFG_PATH}`;
 
-        return process.env.EV_INSTANCE_CONFIG_PATH;
+        return process.env.EV_HP_INIT_CFG_PATH;
     },
-    get contractConfigPath() {
-        if (process.env.EV_CONTRACT_CONFIG_PATH && !fs.existsSync(process.env.EV_CONTRACT_CONFIG_PATH))
-            throw `HotPocket smart contract config file does not exist in EV_CONTRACT_CONFIG_PATH=${process.env.EV_CONTRACT_CONFIG_PATH}`;
+    get hpOverrideCfgPath() {
+        if (process.env.EV_HP_OVERRIDE_CFG_PATH && !fs.existsSync(process.env.EV_HP_OVERRIDE_CFG_PATH))
+            throw `HotPocket override config file does not exist in EV_HP_OVERRIDE_CFG_PATH=${process.env.EV_HP_OVERRIDE_CFG_PATH}`;
 
-        return process.env.EV_CONTRACT_CONFIG_PATH;
+        return process.env.EV_HP_OVERRIDE_CFG_PATH;
     }
 }
 
