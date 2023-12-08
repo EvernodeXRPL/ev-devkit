@@ -1,6 +1,6 @@
 {
   "name": "evdevkit",
-  "version": "0.7.9",
+  "version": "0.7.10",
   "description": "Developer toolkit for Evernode smart contract deployment",
   "keywords": [
     "Evernode",
@@ -9,7 +9,6 @@
     "smart contract"
   ],
   "homepage": "https://github.com/HotPocketDev/evernode-sdk",
-  "license": "MIT",
   "dependencies": {
     "archiver": "5.3.1",
     "commander": "9.4.0",
