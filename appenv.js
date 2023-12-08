@@ -3,7 +3,7 @@ const fs = require('fs');
 
 // Throw errors if the env value is required.
 const appenv = {
-    instanceImage: 'evernodedev/sashimono:hp.0.6.3-ubt.20.04-njs.20',
+    instanceImage: 'evernodedev/sashimono:hp.0.6.4-ubt.20.04-njs.20',
     get tenantSecret() {
         if (!process.env.EV_TENANT_SECRET)
             throw 'EV_TENANT_SECRET environment variable has not been set.';
@@ -16,17 +16,35 @@ const appenv = {
 
         return process.env.EV_USER_PRIVATE_KEY;
     },
-    get hpConfigPath() {
-        if (process.env.EV_INSTANCE_CONFIG_PATH && !fs.existsSync(process.env.EV_INSTANCE_CONFIG_PATH))
-            throw `HotPocket config file does not exist in EV_INSTANCE_CONFIG_PATH=${process.env.EV_INSTANCE_CONFIG_PATH}`;
+    get hpInitCfg() {
+        if (process.env.EV_HP_INIT_CFG_PATH && !fs.existsSync(process.env.EV_HP_INIT_CFG_PATH))
+            throw `HotPocket config file does not exist in EV_HP_INIT_CFG_PATH=${process.env.EV_HP_INIT_CFG_PATH}`;
 
-        return process.env.EV_INSTANCE_CONFIG_PATH;
+        if (!process.env.EV_HP_INIT_CFG_PATH) {
+            return {};
+        }
+
+        try {
+            return JSON.parse(fs.readFileSync(process.env.EV_HP_INIT_CFG_PATH));
+        }
+        catch (e) {
+            throw `EV_HP_INIT_CFG_PATH=${process.env.EV_HP_INIT_CFG_PATH} - ${e}`;
+        }
     },
-    get contractConfigPath() {
-        if (process.env.EV_CONTRACT_CONFIG_PATH && !fs.existsSync(process.env.EV_CONTRACT_CONFIG_PATH))
-            throw `HotPocket smart contract config file does not exist in EV_CONTRACT_CONFIG_PATH=${process.env.EV_CONTRACT_CONFIG_PATH}`;
+    get hpOverrideCfg() {
+        if (process.env.EV_HP_OVERRIDE_CFG_PATH && !fs.existsSync(process.env.EV_HP_OVERRIDE_CFG_PATH))
+            throw `HotPocket override config file does not exist in EV_HP_OVERRIDE_CFG_PATH=${process.env.EV_HP_OVERRIDE_CFG_PATH}`;
 
-        return process.env.EV_CONTRACT_CONFIG_PATH;
+        if (!process.env.EV_HP_OVERRIDE_CFG_PATH) {
+            return {};
+        }
+
+        try {
+            return JSON.parse(fs.readFileSync(process.env.EV_HP_OVERRIDE_CFG_PATH));
+        }
+        catch (e) {
+            throw `EV_HP_OVERRIDE_CFG_PATH=${process.env.EV_HP_OVERRIDE_CFG_PATH} - ${e}`;
+        }
     }
 }
 
