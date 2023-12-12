@@ -1,7 +1,7 @@
 {
   "name": "evdevkit",
   "version": "0.7.11",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "SEE LICENCE IN LICENCE",
   "description": "Developer toolkit for Evernode smart contract deployment",
   "keywords": [
     "Evernode",
@@ -22,7 +22,7 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint *.js",
-    "build": "npm run lint && ncc build index.js -o dist/ && cp LICENSE dist/",
+    "build": "npm run lint && ncc build index.js -o dist/ && cp LICENCE dist/",
     "bundle": "npm run build && ./clean-pkg.sh",
     "publish": "npm run bundle && cp README.md dist && npm publish ./dist"
   },
