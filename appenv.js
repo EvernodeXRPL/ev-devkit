@@ -3,7 +3,7 @@ const fs = require('fs');
 
 // Throw errors if the env value is required.
 const appenv = {
-    instanceImage: 'evernodedev/sashimono:hp.0.6.4-ubt.20.04-njs.20',
+    instanceImage: 'evernode/sashimono:hp.0.6.4-ubt.20.04-njs.20',
     get tenantSecret() {
         if (!process.env.EV_TENANT_SECRET)
             throw 'EV_TENANT_SECRET environment variable has not been set.';
