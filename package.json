@@ -1,6 +1,7 @@
 {
   "name": "evdevkit",
-  "version": "0.7.9",
+  "version": "0.7.11",
+  "license": "SEE LICENSE IN https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/license/evernode-license.pdf",
   "description": "Developer toolkit for Evernode smart contract deployment",
   "keywords": [
     "Evernode",
@@ -9,11 +10,10 @@
     "smart contract"
   ],
   "homepage": "https://github.com/HotPocketDev/evernode-sdk",
-  "license": "MIT",
   "dependencies": {
     "archiver": "5.3.1",
     "commander": "9.4.0",
-    "evernode-js-client": "0.6.20",
+    "evernode-js-client": "0.6.23",
     "hotpocket-js-client": "0.5.5",
     "uuid": "9.0.0"
   },
@@ -22,7 +22,7 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint *.js",
-    "build": "npm run lint && ncc build index.js -o dist/",
+    "build": "npm run lint && ncc build index.js -o dist/ && cp evernode-license.pdf dist/",
     "bundle": "npm run build && ./clean-pkg.sh",
     "publish": "npm run bundle && cp README.md dist && npm publish ./dist"
   },
