@@ -1,6 +1,9 @@
 const process = require('process');
 const fs = require('fs');
 
+const MAINNET = 'mainnet';
+const TESTNET = 'testnet';
+
 // Throw errors if the env value is required.
 const appenv = {
     instanceImage: 'evernode/sashimono:hp.0.6.4-ubt.20.04-njs.20',
@@ -45,7 +48,11 @@ const appenv = {
         catch (e) {
             throw `EV_HP_OVERRIDE_CFG_PATH=${process.env.EV_HP_OVERRIDE_CFG_PATH} - ${e}`;
         }
-    }
+    },
+    get network() {
+        // TODO: Default will be changed to MAINNET after the launch.
+        return process.env.EV_NETWORK || TESTNET;
+    },
 }
 
 Object.freeze(appenv);
