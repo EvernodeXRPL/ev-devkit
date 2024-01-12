@@ -2,7 +2,6 @@ const process = require('process');
 const fs = require('fs');
 
 const MAINNET = 'mainnet';
-const TESTNET = 'testnet';
 
 // Throw errors if the env value is required.
 const appenv = {
@@ -51,7 +50,7 @@ const appenv = {
     },
     get network() {
         // TODO: Default will be changed to MAINNET after the launch.
-        return process.env.EV_NETWORK || TESTNET;
+        return process.env.EV_NETWORK || MAINNET;
     },
 }
 
