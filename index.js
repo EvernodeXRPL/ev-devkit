@@ -118,14 +118,14 @@ program
     .option('--signer-count [signer-count]', 'Number of signers for a cluster with multiple signer nodes')
     .option('--signers [signers]', 'JSON file path of signer details')
     .option('--signer-life [signer-life]', 'Life moments for the signers')
-    .option('--signer-quorum [signer-quorum]', 'Quorum of the cluster with multiple signer nodes (within the valid range (0,1])')
+    .option('--signer-quorum [signer-quorum]', 'Quorum of the cluster with multiple signer nodes (within the valid range (0,1)')
     .option('-e, --evr-limit [evr-limit]', 'Maximum amount of EVRs to be spent on instance acquisitions')
     .action(clusterCreate);
 
 program
     .command('extend')
     .description('Extend instances')
-    .argument('<instances-file-path>', 'File path of instance list (in line-by-line format <host-address>:<instance-name>)')
+    .argument('<instances-file-path>', 'File path of instance list (in line-by-line format <host-address>:<instance-name>:<moments (optional)>)')
     .option('-m, --moments [moments]', 'Instance Life In Moments')
     .action(extend);
 
