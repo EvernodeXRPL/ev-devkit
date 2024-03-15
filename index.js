@@ -21,7 +21,7 @@ program
     .description('List active hosts in Evernode.')
     .option('-l, --limit [limit]', 'List limit')
     .option('-o, --order-by [order-by]', 'Order by key')
-    .option('-d, --desc [desc]', 'Order by descending manor')
+    .option('-d, --desc [desc]', 'Order by descending manner')
     .option('-p, --props [props]', 'Comma separated properties to show')
     .action(list);
 
