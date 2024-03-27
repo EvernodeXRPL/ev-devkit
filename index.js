@@ -11,6 +11,8 @@ const USER_PRIVATE_KEY_TEXT = 'EV_USER_PRIVATE_KEY            Private key of the
 const HP_INIT_CFG_PATH_TEXT = 'EV_HP_INIT_CFG_PATH            File path of the HotPocket configuration for the instance creation';
 const HP_OVERRIDE_CFG_PATH_TEXT = 'EV_HP_OVERRIDE_CFG_PATH        File path of the HotPocket configuration for the contract bundle upload';
 
+program.name('evdevkit');
+
 program
     .command('version')
     .description('See evdevkit version')
