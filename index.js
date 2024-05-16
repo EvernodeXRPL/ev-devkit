@@ -122,6 +122,7 @@ program
     .option('--signer-life [signer-life]', 'Life moments for the signers')
     .option('--signer-quorum [signer-quorum]', 'Quorum of the cluster with multiple signer nodes (within the valid range (0,1)')
     .option('-e, --evr-limit [evr-limit]', 'Maximum amount of EVRs to be spent on instance acquisitions')
+    .option('--recover [recover]', 'Recover from if there are failed cluster creations.')
     .action(clusterCreate);
 
 program
