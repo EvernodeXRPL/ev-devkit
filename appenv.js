@@ -52,6 +52,9 @@ const appenv = {
         // TODO: Default will be changed to MAINNET after the launch.
         return process.env.EV_NETWORK || MAINNET;
     },
+    get xahaudServer() {
+        return process.env.EV_XAHAUD_SERVER || null;
+    },
 }
 
 Object.freeze(appenv);
