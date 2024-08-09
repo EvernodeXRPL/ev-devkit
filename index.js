@@ -149,6 +149,9 @@ program
     .option('-t, --op-time [op-time]', 'Operational time threshold for the audit in hours')
     .action(audit);
 
+program
+  .option('--no-color', 'Disable colored output')
+
 try {
     program.parse();
 }
