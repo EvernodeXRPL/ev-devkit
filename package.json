@@ -11,7 +11,7 @@
   ],
   "homepage": "https://github.com/HotPocketDev/evernode-sdk",
   "dependencies": {
-    "archiver": "^7.0.1",
+    "archiver": "7.0.1",
     "commander": "9.4.0",
     "evernode-js-client": "0.6.52",
     "hotpocket-js-client": "0.5.6",
