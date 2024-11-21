@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const { program } = require('commander');
-const { version, list, acquire, host, bundle, keygen, deploy, acquireAndDeploy, clusterCreate, extend, extendInstance, audit } = require('./lib/command-handler');
+const { version, list, acquire, hostInfo, bundle, keygen, deploy, acquireAndDeploy, clusterCreate, extend, extendInstance, audit } = require('./lib/command-handler');
 
 const ENV_TEXT = 'Environment Variables:';
 const REQUIRED_TEXT = 'Required:';
@@ -18,6 +18,7 @@ program
     .description('See evdevkit version')
     .action(version);
 
+/*
 program
     .command('list')
     .description('List active hosts in Evernode.')
@@ -26,12 +27,16 @@ program
     .option('-d, --desc [desc]', 'Order by descending manner')
     .option('-p, --props [props]', 'Comma separated properties to show')
     .action(list);
+*/
 
 program
-    .command('host')
+    .command('hostinfo')
+
     .description('View host info')
-    .argument('<host-address>', 'Host XRPL account address')
-    .action(host);
+    .option('-h, --host-address [host-address]', 'Host address to search for a single host')
+    .option('-f, --file-path [file-path]', 'Path to a file containing a list of host addresses (one per line)')
+    .option('-o, --output [output]', 'Directory to save the resulting host details')
+    .action(hostInfo);
 
 program
     .command('keygen')
@@ -150,7 +155,7 @@ program
     .action(audit);
 
 program
-  .option('--no-color', 'Disable colored output')
+    .option('--no-color', 'Disable colored output')
 
 try {
     program.parse();
