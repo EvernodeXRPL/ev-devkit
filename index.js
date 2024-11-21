@@ -31,7 +31,6 @@ program
 
 program
     .command('hostinfo')
-
     .description('View host info')
     .option('-h, --host-address [host-address]', 'Host address to search for a single host')
     .option('-f, --file-path [file-path]', 'Path to a file containing a list of host addresses (one per line)')
