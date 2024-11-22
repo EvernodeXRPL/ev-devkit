@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const { program } = require('commander');
-const { version, list, acquire, hostInfo, bundle, keygen, deploy, acquireAndDeploy, clusterCreate, extend, extendInstance, audit } = require('./lib/command-handler');
+const { version, acquire, hostInfo, bundle, keygen, deploy, acquireAndDeploy, clusterCreate, extend, extendInstance, audit } = require('./lib/command-handler');
 
 const ENV_TEXT = 'Environment Variables:';
 const REQUIRED_TEXT = 'Required:';
